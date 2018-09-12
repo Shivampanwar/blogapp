@@ -1,0 +1,40 @@
+
+{% extends 'layout.html' %}
+{% block body %}
+
+<button class="btn .btn-primary pull-right"><a href="/comment/{{tosend[0].title}}">Comment</a></button>
+{% for i in range(tosend|count) %}
+{% if i==0 %}
+<table class="table">
+    <tr>
+        <td><h3>Title</h3></td>
+        <td><h3>Creator</h3></td>
+    </tr>
+    <tr>
+        <td><h5>{{tosend[i].title}}</h5></td>
+        <td><h5>{{tosend[i].Username}}</h5></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"><h3>Content</h3></td>
+    </tr>
+    <tr>
+            <td colspan="2"><h5>{{tosend[i].content}}</h5></td>
+        </tr>
+    
+    </table>
+    <table class=".table-striped">
+            <tr>
+                    <td><h3>Comments</h3></td>
+                </tr>
+    </table>
+{% else %}
+<ul class="list-group">
+        <li class="list-group-item list-group-item-success">{{tosend[i].comment}}</li>    
+      </ul>
+
+{% endif %}
+{% endfor %}
+
+
+{% endblock %}

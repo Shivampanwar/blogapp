@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<button class="btn btn-basic "><a href="/addBlog"> Addblog</a></button>
+
+<ul class="list-group">
+    {% for item in blogs %}
+
+        <li class="list-group-item"><a href="/blogs/{{item.title}}">{{item.title}}</a></li>
+      {% endfor %}  
+      </ul>
+{% endblock %}
